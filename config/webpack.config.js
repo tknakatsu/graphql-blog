@@ -18,10 +18,7 @@ const assetDir = "assets";
 const config = {
   mode: isProduction ? "production" : "development",
   entry: {
-    application: [
-      "core-js",
-      "./frontend/application.ts",
-    ],
+    application: ["core-js", "./frontend/application.ts"],
   },
 
   output: {
@@ -96,12 +93,14 @@ if (isProduction) {
   config.devtool = "source-map";
 } else {
   config.devServer = {
+    host: "0.0.0.0",
     port: devServerPort,
     headers: { "Access-Control-Allow-Origin": "*" },
     stats: "minimal",
     disableHostCheck: true,
   };
-  config.output.publicPath = `//localhost:${devServerPort}/${assetDir}/`;
+  // config.output.publicPath = `//localhost:${devServerPort}/${assetDir}/`;
+  config.output.publicPath = `//0.0.0.0:${devServerPort}/${assetDir}/`;
 
   config.devtool = "cheap-source-map";
 }

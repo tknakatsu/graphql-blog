@@ -8,7 +8,7 @@ module WebpackHelper
   WEBPACK_DEV_SERVER_PORT = 3808 # sync with config/webpac.config.json
 
   def asset_host
-    "localhost:#{WEBPACK_DEV_SERVER_PORT}"
+    "0.0.0.0:#{WEBPACK_DEV_SERVER_PORT}"
   end
 
   # @param [String] name
@@ -17,6 +17,6 @@ module WebpackHelper
   end
 
   def __webpack_manifest
-    @__webpack_manifest ||= JSON.parse(Net::HTTP.get('localhost', '/assets/manifest.json', WEBPACK_DEV_SERVER_PORT))
+    @__webpack_manifest ||= JSON.parse(Net::HTTP.get('0.0.0.0', '/assets/manifest.json', WEBPACK_DEV_SERVER_PORT))
   end
 end
