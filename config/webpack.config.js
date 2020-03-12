@@ -100,7 +100,7 @@ if (isProduction) {
     disableHostCheck: true,
   };
   // config.output.publicPath = `//localhost:${devServerPort}/${assetDir}/`;
-  config.output.publicPath = `//0.0.0.0:${devServerPort}/${assetDir}/`;
+  config.output.publicPath = `//192.168.11.88:${devServerPort}/${assetDir}/`;
 
   config.devtool = "cheap-source-map";
 }

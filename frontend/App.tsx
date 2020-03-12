@@ -40,7 +40,7 @@ export class App extends React.Component<Props, State> {
       }
     `;
 
-    const result = await request<{  articles: Connection<ArticleType> }>({
+    const result = await request<{ articles: Connection<ArticleType> }>({
       query,
     });
     this.setState({ articles: arrayFromConnection(result.data.articles) });

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
   root "articles#root"
 
-  resources :articles
+  # resources :articles
 end
